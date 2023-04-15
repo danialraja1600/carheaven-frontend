@@ -18,10 +18,24 @@ const handleSubmit = (event) => {
         price,
         description,
         imageUrl,
-        createdAt: newDate().toString(),
-        updatedAt: newDate().toString()
+        createdAt: newDate(),
+        updatedAt: newDate()
     };
+    // Get the token from the localStorage
+    const storedToken = localStorage.getItem('authToken');
 
+    // Send the token through the request "Authorization" Headers
+    axios
+      .post(
+        `${API_URL}/api/cars`,
+        requestBody,
+        { headers: { Authorization: `Bearer ${storedToken}` } }
+      )
+        props.refreshProjects();
+      }
+      return ((error) => console.log(error));
+  };
+    
     // Calling parent function add a new caf
     props.addNewCar(requestBody);
 };
@@ -93,6 +107,6 @@ return (
       </form>
     </div>
 );
-}
+
 
     export default AddCar;
