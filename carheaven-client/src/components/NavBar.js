@@ -10,9 +10,14 @@ function NavBar(){
             <Link to = "/cars">
                 <button>Home</button>
             </Link>
+            <Link to = "/events">
+                <button>Events</button>
+            </Link>
 
         {isLoggedIn && (
            <>
+           <Link to = "/events"><button>My Events</button></Link>
+           <Link to = {`/cars/myCars${user.userId}`}><button>My Cars</button></Link>
             <button onClick={logOutUser}>Logout</button>
             <span>{user && user.name}</span>
             </>
