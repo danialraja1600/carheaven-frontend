@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+const API_URL = "http://localhost:5005";
+
 function AddCar(props) {
     const [make, setMake] = useState("");
     const [model, setModel] = useState("");
@@ -35,10 +37,6 @@ const handleSubmit = (event) => {
       }
       return ((error) => console.log(error));
   };
-    
-    // Calling parent function add a new caf
-    props.addNewCar(requestBody);
-};
 
 return (
     <div className="CreateCar">
