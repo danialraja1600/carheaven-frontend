@@ -10,7 +10,6 @@ function MyCarsPage(){
     useEffect(() => {
         const storedToken = localStorage.getItem('authToken');
         const storeUserId = localStorage.getItem("userId");
-        console.log("userid: " + storeUserId);
         axios
         .get(
             `${API_URL}/api/cars/myCars/${storeUserId}`,
