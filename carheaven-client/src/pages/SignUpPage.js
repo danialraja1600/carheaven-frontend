@@ -32,7 +32,9 @@ function SignUpPage(props) {
         })
         // if req fails, error message is set using hook
         .catch((error) => {
+            console.log('err: ', error);
             const errorDescription = error.response.data.message;
+            console.log('errorDescription: ', errorDescription);
             setErrorMessage(errorDescription);
         })
 

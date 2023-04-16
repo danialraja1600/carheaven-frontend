@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "./../context/auth.context";
 
-const API_URL = "http://localhost:3001";
+const API_URL = "http://localhost:3000";
 
 function LoginPage(props) {
     const [email, setEmail] = useState("");
@@ -28,6 +28,7 @@ function LoginPage(props) {
         //sending POST req to API 
         axios.post(`${API_URL}/auth/login`, requestBody)
         .then((response) => {
+            console.log(response);
             console.log("JWT token", response.data.authToken);
             // if req is succesful, auth token is saved in browsers local storage
             storeToken(response.data.authToken);

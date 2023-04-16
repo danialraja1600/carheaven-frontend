@@ -11,7 +11,7 @@ function HomePage(){
 
     /*useEffect hook used to fetch data from API*/
     useEffect(() => {
-        axios.get(`${API_URL}/api/cars`)
+        axios.get(`${API_URL}/api/cars/getCars`)
         /*method called to make GET req to API endpoint*/
         .then((data) => { 
         /*then method of axios promise used to update the
