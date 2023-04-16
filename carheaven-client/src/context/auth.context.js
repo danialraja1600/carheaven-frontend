@@ -13,6 +13,10 @@ function AuthProviderWrapper(props) {
   const storeToken = (token) => {
     localStorage.setItem("authToken", token);
   }  
+
+  const storeUserId = (userid) => {
+    localStorage.setItem("userId", userid);
+  }
     
   const authenticateUser = () => { 
     // Get the stored token from the localStorage
@@ -28,10 +32,12 @@ function AuthProviderWrapper(props) {
       .then((response) => {
         // If the server verifies that JWT token is valid  ✅
         const user = response.data;
+        console.log('user authContext: ', user);
        // Update state variables        
         setIsLoggedIn(true);
         setIsLoading(false);
         setUser(user);
+        storeUserId(user._id);
       })
       .catch((error) => {
         // If the server sends an error response (invalid token) ❌
@@ -39,6 +45,7 @@ function AuthProviderWrapper(props) {
         setIsLoggedIn(false);
         setIsLoading(false);
         setUser(null);
+        storeUserId(null);
       });
 
     } else {
@@ -46,6 +53,7 @@ function AuthProviderWrapper(props) {
       setIsLoggedIn(false);
       setIsLoading(false);
       setUser(null);
+      storeUserId(null);
     }
   }
 
@@ -53,9 +61,14 @@ function AuthProviderWrapper(props) {
     // Upon logout, remove the token from the localStorage
     localStorage.removeItem("authToken");
   }    
+
+  const removeUserId = () => {
+    localStorage.removeItem("userId");
+  }
   
   const logOutUser = () => {
     removeToken();
+    removeUserId();
     authenticateUser();
   }    
 
@@ -68,7 +81,7 @@ function AuthProviderWrapper(props) {
 
   return (
     <AuthContext.Provider
-      value={{ isLoggedIn, isLoading, user, storeToken, authenticateUser, logOutUser }}
+      value={{ isLoggedIn, isLoading, user, storeToken, authenticateUser, logOutUser, storeUserId }}
     >
       {props.children}
     </AuthContext.Provider>

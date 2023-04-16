@@ -63,12 +63,13 @@ nav li {
   margin-bottom: 20px;
   background: #94a7c8;
   border-radius: 4px;
-  display: "flex";
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
-.CarCard h3::after {
+.CarCard h1::after {
   content: url("https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m3/icon-expand.png");
   margin-left: 5px;
 }
