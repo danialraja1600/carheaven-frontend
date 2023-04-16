@@ -11,8 +11,8 @@ function AddCar(props) {
     const [imageUrl, setImageUrl] = useState(""); 
 
     // Handle form submission
-const handleSubmit = (event) => {
-    event.preventDefault();
+const handleSubmit = (event) => { //triggered by the submit event of a form
+    event.preventDefault(); //preventing default behaviour of the form
     const requestBody = {
         make,
         model,
@@ -27,15 +27,25 @@ const handleSubmit = (event) => {
     const storedToken = localStorage.getItem('authToken');
 
     // Send the token through the request "Authorization" Headers
-    axios
-      .post(
+    axios //axios library used to make POST req to server with API url and 
+      .post( 
         `${API_URL}/api/cars`,
-        requestBody,
+        requestBody, //requestBody object
         { headers: { Authorization: `Bearer ${storedToken}` } }
+        //attaching authToken to the Authorization header of the req
       )
+      //resetting state variables to empty strings
+      .then((response) => {
+        setMake("");
+        setModel("");
+        setYear("");
+        setPrice("");
+        setDescription("");
+        setImageUrl("");
         props.refreshProjects();
-      }
-      return ((error) => console.log(error));
+        //function called and passed to component as a prop
+      })
+      .catch ((error) => console.log(error));
   };
 
 return (
@@ -105,6 +115,6 @@ return (
       </form>
     </div>
 );
-
+}
 
     export default AddCar;
