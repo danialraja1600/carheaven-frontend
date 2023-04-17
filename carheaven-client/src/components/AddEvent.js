@@ -46,7 +46,7 @@ function AddEvent(props) {
         setLocation("");
         setCreator("");
         setStatus("");
-        props.refreshCars();
+        props.refreshEvents();
         //function called and passed to component as a prop
       })
       .catch ((error) => console.log(error));
