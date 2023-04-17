@@ -15,8 +15,10 @@ function EditCarPage(props) {
     const navigate = useNavigate();
     const { carId } = useParams();
 
+    const storedToken = localStorage.getItem('authToken');
+
     useEffect(() => {
-        const storedToken = localStorage.getItem('authToken');
+        
 
         axios
           .get(
@@ -46,11 +48,9 @@ function EditCarPage(props) {
             description,
             imageUrl,
         };
-        
-        const storedToken = localStorage.getItem('authToken');
 
         axios
-          .get(
+          .put(
             `${API_URL}/api/cars/${carId}`,
             requestBody,
             { headers: { Authorization: `Bearer ${storedToken}` } }
@@ -59,24 +59,12 @@ function EditCarPage(props) {
             navigate(`/cars/${carId}`)
           });
       };
-      const deleteCar = () => {
-        const storedToken = localStorage.getItem('authToken');      
-
-        axios
-          .delete(
-            `${API_URL}/api/cars/${carId}`,
-            { headers: { Authorization: `Bearer ${storedToken}` } }           
-          )
-          .then(() => navigate("/cars/myCars"))
-          .catch((err) => console.log(err));
-      };  
-    
 
 
 
       return (
         <div className="UpdateCar">
-        <h3>Create A Car To Sell!</h3>
+        <h3>Update your car - {make} {model}!</h3>
         <form className="update-form" onSubmit={(e) => handleFormSubmit(e)}>
         
         Make:
@@ -139,7 +127,6 @@ function EditCarPage(props) {
         
         <button type="Update!">Submit</button>
           </form>
-          <button onClick={deleteCar}>Delete Car!</button>
         </div>
     );
     
