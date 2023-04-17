@@ -1,7 +1,11 @@
-function EventCard ({ title, description, imageUrl, location, creator, status}) {
+import { Link } from "react-router-dom";
+
+function EventCard ({ title, description, imageUrl, location, creator, status, _id}) {
 return (
     <div className="EventCard card">
-        <h3>{title}</h3>
+        <Link to = {`/events/${_id}`}>
+            <h3>{title}</h3>
+        </Link>
         <h4>Description:</h4>
         <p>{description}</p>
         <img src={imageUrl}/>
