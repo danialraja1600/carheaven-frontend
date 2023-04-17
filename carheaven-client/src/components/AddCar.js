@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 
-const API_URL = "http://localhost:5005";
+const API_URL = "http://localhost:3000";
 
 function AddCar(props) {
     const [make, setMake] = useState("");
@@ -31,7 +31,7 @@ const handleSubmit = (event) => { //triggered by the submit event of a form
     // Send the token through the request "Authorization" Headers
     axios //axios library used to make POST req to server with API url and 
       .post( 
-        `${API_URL}/api/cars`,
+        `${API_URL}/api/cars/createCar`,
         requestBody, //requestBody object
         { headers: { Authorization: `Bearer ${storedToken}` } }
         //attaching authToken to the Authorization header of the req
@@ -44,7 +44,7 @@ const handleSubmit = (event) => { //triggered by the submit event of a form
         setPrice("");
         setDescription("");
         setImageUrl("");
-        props.refreshProjects();
+        props.refreshCars();
         //function called and passed to component as a prop
       })
       .catch ((error) => console.log(error));
