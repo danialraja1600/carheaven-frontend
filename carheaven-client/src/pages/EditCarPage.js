@@ -30,7 +30,7 @@ function EditCarPage(props) {
             setYear(oneCar.year);
             setPrice(oneCar.price);
             setDescription(oneCar.description);
-            setImageUrl(one.imageUrl);
+            setImageUrl(oneCar.imageUrl);
           })
           .catch((error) => console.log(error));
         
@@ -76,7 +76,7 @@ function EditCarPage(props) {
       return (
         <div className="UpdateCar">
         <h3>Create A Car To Sell!</h3>
-        <form className="update-form" onSubmit={(e) => handleSubmit(e)}>
+        <form className="update-form" onSubmit={(e) => handleFormSubmit(e)}>
         
         Make:
         <input
