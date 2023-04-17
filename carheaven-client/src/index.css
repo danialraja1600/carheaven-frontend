@@ -105,9 +105,14 @@ nav li {
 
 .EditCarPage form,
 .AddEvent form,
-.AddCar form,
 .SignupPage form,
 .LoginPage form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.car-form {
   display: flex;
   flex-direction: column;
   align-items: center;

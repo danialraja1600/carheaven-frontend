@@ -52,6 +52,7 @@ function EditCarPage(props) {
         axios
           .get(
             `${API_URL}/api/cars/${carId}`,
+            requestBody,
             { headers: { Authorization: `Bearer ${storedToken}` } }
           )
           .then((response) => {
@@ -66,7 +67,7 @@ function EditCarPage(props) {
             `${API_URL}/api/cars/${carId}`,
             { headers: { Authorization: `Bearer ${storedToken}` } }           
           )
-          .then(() => navigate("/projects"))
+          .then(() => navigate("/cars/myCars"))
           .catch((err) => console.log(err));
       };  
     
