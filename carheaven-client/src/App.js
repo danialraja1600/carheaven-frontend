@@ -14,18 +14,21 @@ function App() {
     <div className="App">
       <header className="App-header">
         <NavBar />
-        <AddCar />
-        <AddEvent />
-        
         <Routes>
-          <Route path="/" element={<HomePage />}/>
-          <Route path="/login" element={<LoginPage />}/>
-          <Route path="/signup" element={<SignUpPage />}/>
-          <Route path="/cars/myCars" element={<MyCarsPage />}/>
-          <Route path="/cars/carId"  element={<EditCarPage />}/>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route
+            path="/cars/myCars"
+            element={
+              <>
+                <AddCar />
+                <MyCarsPage />
+              </>
+            }
+          />
+          <Route path="/cars/carId" element={<EditCarPage />} />
         </Routes>
-
-        
       </header>
     </div>
   );
