@@ -1,4 +1,6 @@
 import { useState } from "react";
+import axios from "axios";
+
 
 const API_URL = "http://localhost:5005";
 
@@ -20,8 +22,8 @@ const handleSubmit = (event) => { //triggered by the submit event of a form
         price,
         description,
         imageUrl,
-        createdAt: newDate(),
-        updatedAt: newDate()
+        createdAt: new Date(),
+        updatedAt: new Date()
     };
     // Get the token from the localStorage
     const storedToken = localStorage.getItem('authToken');
@@ -97,7 +99,7 @@ return (
     <textarea
     name="description"
     value={description}
-    placeholder="Enter the make...." required
+    placeholder="Enter the description...." required
     onChange={(e) => setDescription(e.target.value)}
     />
     
