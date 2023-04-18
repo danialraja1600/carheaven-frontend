@@ -15,7 +15,7 @@ function EventsPage(){
         })
         .catch((error) => console.log(error));
       }, []);
-
+    console.log(events);
     return (
         <div className="EventsPage">
             { events.map((event) => <EventCard key={event._id} {...event} /> )}
