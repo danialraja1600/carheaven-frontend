@@ -12,8 +12,8 @@ function AddEvent(props) {
     const [creator, setCreator] = useState("");
     const [status, setStatus] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = (e) => { //triggered by the submit event of a form
+        e.preventDefault(); //preventing default behaviour of the form
 
         const { carId } = props;
         const requestBody = {
