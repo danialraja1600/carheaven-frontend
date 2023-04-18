@@ -3,7 +3,8 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "./../context/auth.context";
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://car-heaven.adaptable.app";
+
 
 function LoginPage() {
     const [email, setEmail] = useState("");

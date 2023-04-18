@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from 'react-router-dom';
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://car-heaven.adaptable.app";
 
 function EditCarPage(props) {
     const [make, setMake] = useState("");

@@ -2,7 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://car-heaven.adaptable.app";
+
 
 function AddCar(props) {
     const [make, setMake] = useState("");
