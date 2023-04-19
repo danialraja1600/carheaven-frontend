@@ -63,31 +63,10 @@ nav {
   margin-left: 5px;
 }
 
-.SignUpPage,
-.LoginPage {
-  background: #f9eec3;
-  border: 1px solid grey;
-  box-shadow: 0px 2px 3px grey;
-  width: 400px;
-  text-align: center;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 4px;
-}
 
 .EditCarPage,
 .EditEventPage {
   background-color: rgb(239, 196, 88);
-}
-
-.SignupPage,
-.LoginPage {
-  background-color: #608dd5;
-}
-
-.LoginPage {
-  background-color: #94a7c8;
 }
 
 form {
@@ -96,8 +75,52 @@ form {
   align-items: center;
 }
 
+.SignUpPage,
+.LoginPage {
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  color: black;
+  width: 40%; 
+  margin-top: 80px;
+  box-shadow:0 15px 4px rgba(0,0,0,0.06);
+}
+
+.SignUpPage h1,
+.LoginPage h1 {
+
+  color: red;
+}
+
+.LoginPage label, .SignUpPage label
+{
+  width: 75%;
+  text-align: left;
+}
+
+.LoginPage input[type=email], .LoginPage input[type=password], 
+.SignUpPage input[type=name], .SignUpPage input[type=email], .SignUpPage input[type=password]{
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+
 .car-form {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.update-form {
+  display: flex;
+  flex-direction: coloumn;
+  align-items: center;
+  padding:10px;
+  border:0;
+  box-shadow:0 15px 4px rgba(0,0,0,0.06);
 }
