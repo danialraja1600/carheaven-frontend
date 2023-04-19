@@ -45,6 +45,20 @@ nav {
   width: 100%;
 }
 
+nav h1
+{
+  display: inline block;
+  color: white;
+  float: left;
+  margin: 0;
+  margin-left: 30px;
+}
+
+nav a
+{
+  text-decoration: none;
+}
+
 .EditCarPage,
 .EditEventPage {
   background-color: rgb(239, 196, 88);
