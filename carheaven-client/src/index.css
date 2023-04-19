@@ -45,25 +45,6 @@ nav {
   width: 100%;
 }
 
-.card {
-  width: 400px;
-  padding: 10px;
-  box-shadow: 0px 2px 3px grey;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  background: #94a7c8;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-.CarCard h1::after {
-  margin-left: 5px;
-}
-
-
 .EditCarPage,
 .EditEventPage {
   background-color: rgb(239, 196, 88);
@@ -120,12 +101,28 @@ form {
   cursor: pointer;
 }
 
-
-
 .car-form {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.card
+{
+  display: inline-block;
+  width: 28%;
+  margin: 3%;
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  color: black;
+  text-align: left;
+  box-shadow:0 15px 4px rgba(0,0,0,0.06);
+}
+
+.card span
+{
+  display: inline-block;
 }
 
 .update-form {
