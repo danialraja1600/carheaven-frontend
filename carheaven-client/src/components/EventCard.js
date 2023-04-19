@@ -8,7 +8,7 @@ return (
         </Link>
         <h4>Description:</h4>
         <p>{description}</p>
-        <img src={imageUrl}/>
+        <span>Image : {imageUrl}</span>
         <h4>Location:</h4>
         <p>{location}</p>
         <h4>Creator:</h4>
