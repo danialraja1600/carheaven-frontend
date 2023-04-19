@@ -12,7 +12,7 @@ function CarDetailsPage (props) {
   const storedToken = localStorage.getItem('authToken');
   const storeUserId = localStorage.getItem('userId');
   const navigate = useNavigate();
-  const oneCar = {};
+  let oneCar = {};
   
   /* function makes Get req to API endpoint for specific snd updates
   the car state value */
