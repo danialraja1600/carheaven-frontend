@@ -43,6 +43,8 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
+  text-align: right;
+  padding-right: 50px;
 }
 
 nav h1
@@ -94,7 +96,7 @@ form {
 }
 
 .LoginPage input[type=email], .LoginPage input[type=password], 
-.SignUpPage input[type=name], .SignUpPage input[type=email], .SignUpPage input[type=password]{
+.SignUpPage input[type=email], .SignUpPage input[type=password], .SignUpPage input[type=text]{
   width: 80%;
   padding: 12px 20px;
   margin: 8px 0;
