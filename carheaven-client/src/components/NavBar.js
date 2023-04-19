@@ -7,6 +7,7 @@ function NavBar(){
 
     return (
         <nav>
+            <Link to = "/"><h1>Car Heaven</h1></Link>
             <Link to = "/">
                 <button>Home</button>
             </Link>

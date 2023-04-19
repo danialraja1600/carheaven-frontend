@@ -45,24 +45,19 @@ nav {
   width: 100%;
 }
 
-.card {
-  width: 400px;
-  padding: 10px;
-  box-shadow: 0px 2px 3px grey;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  background: #94a7c8;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+nav h1
+{
+  display: inline block;
+  color: white;
+  float: left;
+  margin: 0;
+  margin-left: 30px;
 }
 
-.CarCard h1::after {
-  margin-left: 5px;
+nav a
+{
+  text-decoration: none;
 }
-
 
 .EditCarPage,
 .EditEventPage {
@@ -109,11 +104,45 @@ form {
   box-sizing: border-box;
 }
 
+.LoginPage button[type=submit], .SignUpPage button[type=submit] {
+  width: 25%;
+  background-color: red;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
 .car-form {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.card
+{
+  display: inline-block;
+  width: 28%;
+  margin: 3%;
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  color: black;
+  text-align: left;
+  box-shadow:0 15px 4px rgba(0,0,0,0.06);
+}
+.card a
+{
+  text-decoration: none;
+  color: red;
+  cursor: pointer;
+}
+
+.card span
+{
+  display: inline-block;
 }
 
 .update-form {
