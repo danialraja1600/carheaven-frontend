@@ -91,6 +91,14 @@ form {
 
   color: red;
 }
+
+.LoginPage label, .SignUpPage label
+{
+  width: 75%;
+  text-align: left;
+}
+
+
 .car-form {
   display: flex;
   flex-direction: column;
