@@ -109,6 +109,17 @@ form {
   box-sizing: border-box;
 }
 
+.LoginPage button[type=submit], .SignUpPage button[type=submit] {
+  width: 25%;
+  background-color: red;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 
 .car-form {
   display: flex;
