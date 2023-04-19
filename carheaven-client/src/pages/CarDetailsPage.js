@@ -10,6 +10,7 @@ function CarDetailsPage (props) {
   /*destructured to store the current state value and a function to update the state */
   const { carId } = useParams();
   const storedToken = localStorage.getItem('authToken');
+  const storeUserId = localStorage.getItem('userId');
   const navigate = useNavigate();
   
   /* function makes Get req to API endpoint for specific snd updates
@@ -24,7 +25,6 @@ function CarDetailsPage (props) {
       )
       .then((response) => {
         const oneCar = response.data;
-        console.log('oneCar: ', oneCar);
   /* extracts data from the response obj and saves as variable */
         setCar(oneCar);
   /* updating state with new data */
@@ -67,10 +67,15 @@ function CarDetailsPage (props) {
         </>
       )}
 
+      {oneCar.user === storeUserId && (
+        <>
       <Link to={`/cars/edit/${carId}`}>
         <button>Update!</button>
       </Link>
         <button onClick={deleteCar}>Delete!</button>
+      </>
+      )}  
+
       
     </div>
   );

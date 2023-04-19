@@ -17,7 +17,6 @@ function HomePage(){
         .then((data) => { 
         /*then method of axios promise used to update the
         state of the variable with the res data from API*/
-          console.log(data);
           setCars(data?.data);
         })
         .catch((error) => console.log(error));
