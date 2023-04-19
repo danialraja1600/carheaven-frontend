@@ -24,6 +24,7 @@ function CarDetailsPage (props) {
       )
       .then((response) => {
         const oneCar = response.data;
+        console.log('oneCar: ', oneCar);
   /* extracts data from the response obj and saves as variable */
         setCar(oneCar);
   /* updating state with new data */
