@@ -7,12 +7,12 @@ const API_URL = "https://car-heaven.adaptable.app";
 
 function CarDetailsPage (props) {
   const [car, setCar] = useState(null);
+  const [ownCar, setOwnCar ] = useState(false);
   /*destructured to store the current state value and a function to update the state */
   const { carId } = useParams();
   const storedToken = localStorage.getItem('authToken');
   const storeUserId = localStorage.getItem('userId');
   const navigate = useNavigate();
-  let oneCar = {};
   
   /* function makes Get req to API endpoint for specific snd updates
   the car state value */
@@ -25,7 +25,10 @@ function CarDetailsPage (props) {
   header with a token */     
       )
       .then((response) => {
-        oneCar = response.data;
+        const oneCar = response.data;
+        if(storeUserId == oneCar.user) {
+          setOwnCar(true);
+        }
   /* extracts data from the response obj and saves as variable */
         setCar(oneCar);
   /* updating state with new data */
@@ -68,7 +71,7 @@ function CarDetailsPage (props) {
         </>
       )}
 
-      {oneCar.user === storeUserId && (
+      {ownCar && (
         <>
       <Link to={`/cars/edit/${carId}`}>
         <button>Update!</button>
