@@ -12,6 +12,7 @@ function CarDetailsPage (props) {
   const storedToken = localStorage.getItem('authToken');
   const storeUserId = localStorage.getItem('userId');
   const navigate = useNavigate();
+  const oneCar = {};
   
   /* function makes Get req to API endpoint for specific snd updates
   the car state value */
@@ -24,7 +25,7 @@ function CarDetailsPage (props) {
   header with a token */     
       )
       .then((response) => {
-        const oneCar = response.data;
+        oneCar = response.data;
   /* extracts data from the response obj and saves as variable */
         setCar(oneCar);
   /* updating state with new data */
