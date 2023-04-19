@@ -119,6 +119,12 @@ form {
   text-align: left;
   box-shadow:0 15px 4px rgba(0,0,0,0.06);
 }
+.card a
+{
+  text-decoration: none;
+  color: red;
+  cursor: pointer;
+}
 
 .card span
 {
