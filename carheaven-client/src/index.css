@@ -98,6 +98,17 @@ form {
   text-align: left;
 }
 
+.LoginPage input[type=email], .LoginPage input[type=password], 
+.SignUpPage input[type=name], .SignUpPage input[type=email], .SignUpPage input[type=password]{
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
 
 .car-form {
   display: flex;
