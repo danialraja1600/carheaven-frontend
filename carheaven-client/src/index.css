@@ -63,37 +63,27 @@ nav {
   margin-left: 5px;
 }
 
-.SignUpPage,
-.LoginPage {
-  background: grey;
-  border: 1px solid grey;
-  box-shadow: 0px 2px 3px grey;
-  width: 400px;
-  text-align: center;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 4px;
-}
 
 .EditCarPage,
 .EditEventPage {
   background-color: rgb(239, 196, 88);
 }
 
-.SignupPage,
-.LoginPage {
-  background-color: #608dd5;
-}
-
-.LoginPage {
-  background-color: #94a7c8;
-}
-
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.SignUpPage,
+.LoginPage {
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  color: black;
+  width: 40%; 
+  margin-top: 80px;
+  box-shadow:0 15px 4px rgba(0,0,0,0.06);
 }
 
 .car-form {
