@@ -8,8 +8,10 @@ const API_URL = "https://car-heaven.adaptable.app";
 
 function EventDetailsPage (props) {
   const [event, setEvent] = useState(null);
+  const [ownEvent, setOwnEvent] = useState(false);
   const { eventId } = useParams();
   const storedToken = localStorage.getItem('authToken');
+  const storeUserId = localStorage.getItem('userId');
   const navigate = useNavigate();
   
   /* function makes Get req to API endpoint for specific event and updates
@@ -26,6 +28,9 @@ function EventDetailsPage (props) {
   /* when req is succesful execute callback function */
       .then((response) => {
         const oneEvent = response.data;
+        if(storeUserId === oneEvent.creator){
+          setOwnEvent(true);
+        }
   /* extracts data from the response obj and saves as variable */
         setEvent(oneEvent);
   /* updating state with new data */
@@ -66,12 +71,15 @@ function EventDetailsPage (props) {
 
         </>
       )}
-
+    {ownEvent && (
+      <>
       <Link to={`/events/edit/${eventId}`}>
         <button>Update!</button>
       </Link>
         <button onClick={deleteEvent}>Delete!</button>
-      
+      </>
+      )}
+
     </div>
   );
 }
