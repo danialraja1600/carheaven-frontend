@@ -65,7 +65,7 @@ function EventDetailsPage (props) {
         <>
           <h1>{event.title}</h1>
           <p>{event.description}</p>
-          <p>{event.imageUrl}</p>
+          <img src ={event.imageUrl} alt="ImageUrl"/>
           <p>{event.location}</p>
           <p>{event.status}</p>
 

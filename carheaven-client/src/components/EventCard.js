@@ -10,7 +10,7 @@ return (
         <h4>Description:</h4>
         <p>{description}</p>
         <h4>Image:</h4>
-        <p>{imageUrl}</p>
+        <img class="eventImg" src={imageUrl} alt="ImageUrl"/>
         <h4>Location:</h4>
         <p>{location}</p>
         <h4>Creator : {creator.name}</h4>
