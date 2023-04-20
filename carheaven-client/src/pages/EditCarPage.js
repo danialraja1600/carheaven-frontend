@@ -12,19 +12,29 @@ function EditCarPage(props) {
     const [description, setDescription] = useState("");
     const [imageUrl, setImageUrl] = useState(""); 
 
+    //used to navigate to different routes
     const navigate = useNavigate();
+    // importing hook from react-router-dom
     const { carId } = useParams();
+    //creating variable that is passed as param in URL
 
     const storedToken = localStorage.getItem('authToken');
+    //getting auth token stored in local storage 
 
+    // side-effect hook
     useEffect(() => {
+    // triggered when page loads or CarId is changed
         
 
         axios
+    // GET req to specific url with specific param
+    // sends auth header containing auth token for the user
           .get(
             `${API_URL}/api/cars/${carId}`,
             { headers: { Authorization: `Bearer ${storedToken}` } }
-          )
+          ) // promise executed when servers responds with req data
+    // extracts car object from response and sets state variable
+    // with values
           .then((response) => {
             const oneCar = response.data;
             setMake(oneCar.make);
@@ -39,8 +49,11 @@ function EditCarPage(props) {
       }, [carId]);
     
       const handleFormSubmit = (e) => {
+    //function called when user submits form to update
+    //prevents default form submission behaviour 
         e.preventDefault();
         const requestBody = {
+    //creates a request body with the updated car properties
             make, 
             model,
             year,
@@ -50,6 +63,7 @@ function EditCarPage(props) {
         };
 
         axios
+    //PUT req to update car with updated data
           .put(
             `${API_URL}/api/cars/${carId}`,
             requestBody,

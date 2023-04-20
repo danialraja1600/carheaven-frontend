@@ -11,9 +11,13 @@ function EditEventPage(props) {
     const [imageUrl, setImageUrl] = useState("");
     const [location, setLocation] = useState("");
     const [status, setStatus] = useState("");
-
+   
+    //used to navigate to different routes
     const navigate = useNavigate();
+
+
     const { eventId } = useParams();
+    //creating variable that is passed as param in URL
 
     const storedToken = localStorage.getItem('authToken');
 
@@ -38,6 +42,8 @@ function EditEventPage(props) {
       }, [eventId]);
     
       const handleFormSubmit = (e) => {
+    //function called when user submits form to update
+    //prevents default form submission behaviour 
         e.preventDefault();
         const requestBody = {
             title, 
