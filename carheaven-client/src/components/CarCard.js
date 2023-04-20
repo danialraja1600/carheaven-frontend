@@ -7,6 +7,7 @@ function CarCard ({make, model, year, price, description, imageUrl, user, create
                 <h1>{make} {model}</h1>
             </Link>
             <span>Year : {year}</span>
+            <br></br>
             <span>Price : {price}</span>
             <p style={{ maxWidth: "400px" }}>Description : {description} </p>
             <span>Image : {imageUrl}</span>
