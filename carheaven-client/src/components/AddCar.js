@@ -16,6 +16,7 @@ function AddCar(props) {
     // Handle form submission
 const handleSubmit = (event) => { //triggered by the submit event of a form
     event.preventDefault(); //preventing default behaviour of the form
+
     const requestBody = {
         make,
         model,
@@ -23,8 +24,8 @@ const handleSubmit = (event) => { //triggered by the submit event of a form
         price,
         description,
         imageUrl,
-        createdAt: new Date(),
-        updatedAt: new Date()
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
     };
     // Get the token from the localStorage
     const storedToken = localStorage.getItem('authToken');

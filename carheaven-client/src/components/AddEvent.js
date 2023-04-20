@@ -22,10 +22,9 @@ function AddEvent(props) {
             imageUrl,
             location,
             creator,
-            status,
             carId,
-            createdAt: new Date(),
-            updatedAt: new Date()
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString()
         };
     
     // Get the token from the localStorage
