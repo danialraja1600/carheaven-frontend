@@ -68,6 +68,8 @@ function EditCarPage(props) {
             `${API_URL}/api/cars/${carId}`,
             requestBody,
             { headers: { Authorization: `Bearer ${storedToken}` } }
+    /* passing in the request header which includes a authorization
+  header with a token */ 
           )
           .then((response) => {
             navigate(`/cars/${carId}`)

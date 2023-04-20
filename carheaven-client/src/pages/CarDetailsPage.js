@@ -61,12 +61,14 @@ function CarDetailsPage (props) {
     <div className="CarDetails">
       {car && (
         <>
+        <form>
           <h1>{car.make}</h1>
-          <p>{car.model}</p>
-          <p>{car.year}</p>
-          <p>{car.price}</p>
-          <p>{car.description}</p>
-          <p>{car.imageUrl}</p>
+          <p>Model : {car.model}</p>
+          <p>Year : {car.year}</p>
+          <p>Price : {car.price}</p>
+          <p>Description : {car.description}</p>
+          <p>Image URL : {car.imageUrl}</p>
+        </form>
 
         </>
       )}
