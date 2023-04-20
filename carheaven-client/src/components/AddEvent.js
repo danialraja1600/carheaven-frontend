@@ -96,6 +96,14 @@ return (
     placeholder="Enter the location...." required
     onChange={(e) => setLocation(e.target.value)}
     />
+
+    Status:
+    <select name="status" value={status} 
+    onChange={(e) => setStatus(e.target.value)}>
+    <option>Upcoming</option>
+    <option>Expired</option> 
+    </select>
+    
     <button type="submit">Create Event</button>
 </form>
 </div>);
