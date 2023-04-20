@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 
 function EventCard ({ title, description, imageUrl, location, creator, status, _id}) {
 
-    console.log(creator);
-
 return (
     <div className="EventCard card">
         <Link to = {`/events/${_id}`}>
