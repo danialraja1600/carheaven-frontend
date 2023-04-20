@@ -28,6 +28,8 @@ function EditEventPage(props) {
           .get(
             `${API_URL}/api/events/${eventId}`,
             { headers: { Authorization: `Bearer ${storedToken}` } }
+        /* passing in the request header which includes a authorization
+  header with a token */ 
           )
           .then((response) => {
             const oneEvent = response.data;
@@ -108,15 +110,6 @@ function EditEventPage(props) {
         value={location}
         placeholder="Enter the new location...." required
         onChange={(e) => setLocation(e.target.value)}
-        />
-        
-        
-        Status:
-        <textarea
-        name="status"
-        value={description}
-        placeholder="Enter the new status...." required
-        onChange={(e) => setStatus(e.target.value)}
         />
         
         <button type="Update!">Submit</button>
