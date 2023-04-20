@@ -67,7 +67,7 @@ function CarDetailsPage (props) {
           <p>Year : {car.year}</p>
           <p>Price : {car.price}</p>
           <p>Description : {car.description}</p>
-          <p>Image URL : {car.imageUrl}</p>
+          <img src ={car.imageUrl} alt="ImageUrl"/>
         </form>
 
         </>

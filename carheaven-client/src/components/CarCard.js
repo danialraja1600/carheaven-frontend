@@ -10,7 +10,7 @@ function CarCard ({make, model, year, price, description, imageUrl, user, create
             <br></br>
             <span>Price : {price}</span>
             <p style={{ maxWidth: "400px" }}>Description : {description} </p>
-            <span>Image : {imageUrl}</span>
+            <img class="cardImg" src={imageUrl} alt="ImageUrl"/>
             <span>Created On : {createdAt}</span>
             <span>Last Updated On : {updatedAt}</span>
         </div>

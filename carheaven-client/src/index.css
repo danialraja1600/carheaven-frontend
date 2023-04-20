@@ -54,6 +54,10 @@ nav h1
   margin-left: 30px;
 }
 
+nav button:hover 
+{cursor:pointer}
+
+
 nav a
 {
   text-decoration: none;
@@ -152,4 +156,8 @@ form {
   padding:10px;
   border:0;
   box-shadow:0 15px 4px rgba(0,0,0,0.06);
+}
+
+.cardImg {
+  max-width:100%;
 }
