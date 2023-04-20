@@ -4,7 +4,7 @@ import EventCard from "../components/EventCard";
 
 import AddEvent from "../components/AddEvent";
 
-const API_URL = "https://car-heaven.adaptable.app";
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3000";
 
 
 function MyEventsPage(){

@@ -2,7 +2,7 @@ import {useState, useEffect} from "react";
 import axios from "axios";
 import EventCard from "../components/EventCard";
 
-const API_URL = "https://car-heaven.adaptable.app";
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3000";
 
 function EventsPage(){
     const [events, setEvents] = useState([]);

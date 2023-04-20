@@ -2,7 +2,7 @@ import {useState, useEffect} from "react";
 import axios from "axios";
 import CarCard from "../components/CarCard";
 
-const API_URL = "https://car-heaven.adaptable.app";
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3000";
 
 
 function HomePage(){
@@ -15,6 +15,7 @@ function HomePage(){
         axios.get(`${API_URL}/api/cars/getCars`)
         /*method called to make GET req to API endpoint*/
         .then((data) => { 
+          console.log(data);
         /*then method of axios promise used to update the
         state of the variable with the res data from API*/
           setCars(data?.data);
