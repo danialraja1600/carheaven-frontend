@@ -45,7 +45,6 @@ function AddEvent(props) {
         setImageUrl("");
         setLocation("");
         setCreator("");
-        setStatus("");
         props.refreshEvents();
         //function called and passed to component as a prop
       })
